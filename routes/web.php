@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/{url?}', function () {
-    return view('app');
-})->where('', 'list');
+// Route::get('/{url?}', function () {
+//     return view('app');
+// })->where('', 'list');
+Route::get('/{path?}', function(){
+  return view('app');
+})->where('path','.*');
 
 Route::group(['prefix' => 'auth'], function () {
   Route::get('install', 'MainController@install');

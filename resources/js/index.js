@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './screens/home';
 import ListOfThings from './screens/list';
+import ShiftOfThings from './screens/shift';
 
 ReactDOM.render((
   <BrowserRouter>
@@ -16,11 +17,15 @@ ReactDOM.render((
           <li className="nav-item">
             <Link className="nav-link" to="/list">List</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/shift">Shift</Link>
+          </li>
         </ul>
       </nav>
     
       <Switch>
-        <Route exact path="/list" component={ ListOfThings } />
+        <Route path="/list" component={ ListOfThings } />
+        <Route path="/shift" component={ ShiftOfThings } />
         <Route component={ Home } />
       </Switch>
     </div>

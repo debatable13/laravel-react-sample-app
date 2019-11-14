@@ -21,15 +21,21 @@ export default class Home extends React.Component {
 
   handleStoreInfoResponse(response) {
     this.setState({
-      isStoreInfoLoading: false,
-      storeInfo: response.data,
+      // isStoreInfoLoading: false,
+      // storeInfo: response.data,
+      // TODO
+      isStoreInfoLoading: true,
+      storeInfo: [],
     });
   }
 
   handleCatalogSummaryResponse(response) {
     this.setState({
-      isCatalogSummaryLoading: false,
-      catalogSummary: response.data.data,
+      // isCatalogSummaryLoading: false,
+      // catalogSummary: response.data.data,
+      // TODO
+      isCatalogSummaryLoading: true,
+      catalogSummary: [],
     });
   }
 
@@ -79,7 +85,8 @@ export default class Home extends React.Component {
                                           { 
                                             summaryItem.format === 'currency'
                                             ?
-                                            new Intl.NumberFormat(undefined, { style: 'currency', currency: this.state.storeInfo.currency }).format(this.state.catalogSummary[summaryItem.index])
+                                            ''
+                                            //new Intl.NumberFormat(undefined, { style: 'currency', currency: this.state.storeInfo.currency }).format(this.state.catalogSummary[summaryItem.index])
                                             :
                                             this.state.catalogSummary[summaryItem.index]
                                           }
